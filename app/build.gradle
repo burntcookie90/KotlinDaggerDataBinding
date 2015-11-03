@@ -27,10 +27,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    kapt 'com.android.databinding:compiler:1.0-rc5'
 }
 buildscript {
     ext.kotlin_version = '1.0.0-beta-1103'
@@ -43,4 +43,8 @@ buildscript {
 }
 repositories {
     mavenCentral()
+}
+
+kapt {
+    generateStubs = true
 }
