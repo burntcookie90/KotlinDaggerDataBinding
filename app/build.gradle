@@ -31,7 +31,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     kapt 'com.android.databinding:compiler:1.0-rc5'
+
+    compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }
+
 buildscript {
     ext.kotlin_version = '1.0.0-beta-1103'
     repositories {
